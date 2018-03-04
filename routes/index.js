@@ -16,7 +16,7 @@ var Books = mongoose.model('Books', {
 
 });
 /* GET home page. */
-router.get('/home', function (req, res) {
+router.get('/', function (req, res) {
     res.render('homepage')
 });
 /* GET AddBooks page. */
