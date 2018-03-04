@@ -42,6 +42,7 @@ input {
 .btn {
     cursor: pointer !important;
     margin-top: 5px;
+    margin-bottom: 6px;
     width: 100%;
     height: 50px;
     border-radius: 20px !important;
@@ -50,10 +51,20 @@ input {
 }
 
 a {
-    color: white !important;
+    color: white;
     text-decoration: none !important;
     font-family: 'Raleway', sans-serif !important;
     font-size: 20px;
 }
+a.back-to-home{
+    color: grey !important;
+    font-size: 15px;
+    margin-left: 13px;
+    margin-top: 8px !important;
+}
 
+a.back-to-home:hover{
+    color: white !important;
+    text-decoration: underline !important;
 
+}
