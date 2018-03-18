@@ -11,6 +11,7 @@ body {
     font-family: 'Raleway', sans-serif;
     border-color: darkcyan;
     transition: all 0.5s !important;
+    color: white;
 }
 
 .btn-login:hover {
@@ -310,9 +311,11 @@ body {
     font-size: 40px;
     transition: all 1s;
     color: darkcyan;
-
 }
-
+.social-call .contact-us:hover{
+    transform: scale(1.2);
+    z-index: 2;
+}
 /*----FOOTER----*/
 
 footer {

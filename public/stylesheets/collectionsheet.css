@@ -57,6 +57,24 @@ body {
     padding-bottom: 20px;
 }
 
+
+.box-shadow{
+    transition: 1s;
+}
+.box-shadow:hover{
+    -webkit-transform:scale(1)  ;
+    -moz-transform:scale(1)  ;
+    -ms-transform:scale(1)  ;
+    -o-transform: scale(1) ;
+    transform: scale(1.05) ;
+    z-index: 2;
+    border-color: darkcyan;
+}
+.card-img-right {
+    width: 200px;
+    height: 250px;
+}
+
 /*----FOOTER----*/
 
 footer {
@@ -71,9 +89,4 @@ footer {
     color: #8C8B8A;
     text-transform: uppercase;
 
-}
-
-.card-img-right {
-    width: 200px;
-    height: 250px;
 }
