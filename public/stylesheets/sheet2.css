@@ -16,6 +16,7 @@ body {
     max-width: 100% !important;
     padding: auto;
 }
+
 .header-style{
     margin-top: 80px !important;
 }
@@ -23,7 +24,6 @@ body {
 th, td {
     padding: 10px !important;
     margin: 0px 30px 0px 30px  !important;
-
 
 }
 
@@ -95,11 +95,12 @@ th, td {
 }
 
 /*TABLE STYLE SECTION*/
-.table-shadow{
+.table-shadow {
     box-shadow: 0px 2px 3px 4px rgba(0, 0, 0, 0.2);
     border-radius: 6px;
 
 }
+
 .box-shadow {
     color: #fff;
 }
@@ -113,8 +114,6 @@ th, td {
     opacity: 0.9;
 
 }
-
-
 
 .nice-btn {
     box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.4);

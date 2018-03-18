@@ -40,35 +40,35 @@
 
 <!-- collection section-->
 <section id="root">
- <section class="jumbotron text-center custom-style">
-    <div class="container mt-5">
-        <h2 class="jumbotron-heading custom-head">{{h2}}</h2>
-        <hr class="featuret-header"  width="120px">
-        <p class="text-muted">  {{p}}  </p>
-    </div>
- </section>
+    <section class="jumbotron text-center custom-style">
+        <div class="container mt-5">
+            <h2 class="jumbotron-heading custom-head">{{h2}}</h2>
+            <hr class="featuret-header" width="120px">
+            <p class="text-muted"> {{p}} </p>
+        </div>
+    </section>
 
- <!-- collection of books-->
-<section class="bg-light mb-5 ">
+    <!-- collection of books-->
+    <section class="bg-light mb-5 ">
         <div class="container">
             <div class="row mb-2">
-                <div class="col-md-6"  v-for="book in books">
+                <div class="col-md-6" v-for="book in books">
                     <div class="card flex-md-row  mt-4 box-shadow h-md-250">
                         <div class="card-body d-flex flex-column align-items-start">
                             <h3 class="mb-0">
                                 {{book.bookName}}
                             </h3>
-                            <div class="mb-1 text-muted">{{book.publishYear}}</div>
+                            <div class="mb-1 text-muted">{{book.authorName}}</div>
                             <p class="card-text mb-auto">{{book.description}}</p>
                             <a :href="book.bookLink">Order Now </a>
                         </div>
-                        <img class="card-img-right flex-auto d-none d-md-block"  :src="book.image" alt="Card image cap">
+                        <img class="card-img-right flex-auto d-none d-md-block" :src="book.image" alt="Card image cap">
                     </div>
                 </div>
-        </div>
+            </div>
         </div>
 
-</section>
+    </section>
 </section>
 
 <!--FOOTER-->
@@ -111,8 +111,8 @@
         el: '#root',
         data: {
 
-            h2:"My Collections",
-            p:"These are collections of books that you may want to download on your PC.",
+            h2: "My Collections",
+            p: "These are collections of books that you may want to download on your PC.",
             books: []
 
 
