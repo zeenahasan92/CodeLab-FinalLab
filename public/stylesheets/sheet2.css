@@ -16,9 +16,15 @@ body {
     max-width: 100% !important;
     padding: auto;
 }
+.header-style{
+    margin-top: 80px !important;
+}
 
-.th, td {
+th, td {
     padding: 10px !important;
+    margin: 0px 30px 0px 30px  !important;
+
+
 }
 
 /* ======= Nav Section =========*/
@@ -48,23 +54,7 @@ body {
     color: white;
 }
 
-/*jumbotron style section*/
-
-.bgcolor {
-    background-color: transparent !important;
-    color: #fff;
-    overflow: hidden !important;
-    display: block;
-    margin-left: 60px;
-    margin-top: 25px;
-}
-
-.display-4 {
-    font-family: 'Raleway', sans-serif !important;
-    font-weight: bold !important;
-    font-size: 45px !important;
-
-}
+/*table header style section*/
 
 .btn-style {
     box-shadow: 0px 4px 6px 2px rgba(73, 95, 119, 0.7);
@@ -105,8 +95,12 @@ body {
 }
 
 /*TABLE STYLE SECTION*/
+.table-shadow{
+    box-shadow: 0px 2px 3px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+
+}
 .box-shadow {
-    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.9);
     color: #fff;
 }
 
@@ -120,12 +114,8 @@ body {
 
 }
 
-.tableStyle {
-    border-radius: 10px !important;
-    margin-left: -13px;
-}
+
 
 .nice-btn {
     box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.4);
 }
-

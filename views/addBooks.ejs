@@ -29,35 +29,15 @@
         <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 fixed-top nav-section">
             <img src="/images/vfff.png" class="my-0 mr-md-auto font-weight-normal logo-style"/>
             <nav class="my-2 my-md-0 mr-md-3 navbar-style">
-                <a class="p-2 nav-item" href="/">Home</a>
-                <a class="p-2 nav-item active" href="/books">Add Books</a>
+                <a class="p-2 nav-item" href="/home">Home</a>
+                <a class="p-2 nav-item active" href="/collection">My Collections</a>
             </nav>
         </div>
     </div>
 </header>
 
+<!---ROOT CONTAINER----->
 <div class="container" id="root">
-    <div class="container">
-        <div class="row h-100 justify-content-center align-items-center">
-            <div class="col-md-12">
-                <div class="row justify-content-center">
-                    <div class="col-md-12">
-                        <section class="jumbotron  bgcolor text-center ">
-                            <!--<div class="container mt-5 justify-content-center">-->
-                            <section class="jumbotron-heading">
-                                <h1 class="display-4 text-center "> {{headOne}} </h1>
-                                <p class="lead">{{p}} </p>
-                                <button class="btn btn-success btn-style" @click="openAddModal"> Add New Book
-                                    <i class="far fa-plus-square"></i></button>
-                            </section>
-                            <!--</div>-->
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <!-- Add of Modal -->
     <div class="modal fade" id="addModal" tabindex="-1" role="dialog"
@@ -94,6 +74,17 @@
                             <label class="text-white">Publish Year</label>
                             <input v-model="newBook.publishYear" type="text"
                                    placeholder="type in Publish Year"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-white">Description</label>
+                            <input v-model="newBook.description" type="text"
+                                   placeholder="type in Description of book"
+                                   class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-white">Book Link</label>
+                            <input v-model="newBook.bookLink" type="text" placeholder="type in Book Link"
                                    class="form-control">
                         </div>
                         <div class="form-group">
@@ -147,6 +138,14 @@
                             <input v-model="editingBook.publishYear" type="text" class="form-control">
                         </div>
                         <div class="form-group">
+                            <label class="text-white">Descriptionr</label>
+                            <input v-model="editingBook.description" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-white">Book Link</label>
+                            <input v-model="editingBook.bookLink" type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label class="text-white">Image</label>
                             <input v-model="editingBook.image" type="text" class="form-control">
                         </div>
@@ -166,50 +165,65 @@
     <!--end of edit of Modal-->
 
     <div class="row justify-content-center  align-items-center ">
-        <div class="col-md-9">
-
-            <table class="table tableStyle table-hover box-shadow " align="center">
-                <thead class="table-head">
-                <tr class="text-center">
-                    <th>NO</th>
-                    <th>Book Name</th>
-                    <th>ISBN Number</th>
-                    <th>Author Name</th>
-                    <th>Publish Year</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-
-
-                </tr>
-                </thead>
-                <tbody class="table-color">
-
-                <tr v-for="(book,index) in books" class=" text-center ">
-                    <td>{{index+1}}</td>
-                    <td>{{book.bookName}}</td>
-                    <td>{{book.isbnNo}}</td>
-                    <td>{{book.authorName}}</td>
-                    <td>{{book.publishYear}}</td>
-
-                    <td>
-                        <button @click="openEditModal(book)"
-                                class="btn btn-primary nice-btn btn-sm  px-3"><i
-                                    class="far fa-edit"></i></button>
-                    </td>
-                    <td>
-                        <button @click="removeBook(book._id)"
-                                class="btn btn-danger nice-btn  btn-sm px-4 "><i
-                                    class="far fa-trash-alt"></i></button>
-                    </td>
-
-                </tr>
-                </tbody>
-            </table>
+        <div class="col-md-10">
+            <header class="text-white text-center mb-5 header-style ">
+                <h1> {{headOne}} </h1>
+                <p class="lead">{{p}}</p>
+                <button class="btn btn-success btn-style " @click="openAddModal"> Add New Book
+                    <i class="far fa-plus-square"></i></button>
+            </header>
         </div>
+        <div class="col-md-10">
+            <div class="table-responsive  mb-5 table-shadow ">
+                <table class="table tableStyle table-hover box-shadow mb-0 " align="center">
+                    <thead class="table-head">
+                    <tr class="text-center">
+                        <th>NO</th>
+                        <th>Book Name</th>
+                        <th>ISBN Number</th>
+                        <th>Author Name</th>
+                        <th>Publish Year</th>
+                        <th>Description</th>
+                        <th>Book Link</th>
+                        <th>Image</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
 
+
+                    </tr>
+                    </thead>
+                    <tbody class="table-color">
+
+                    <tr v-for="(book,index) in books" class=" text-center ">
+                        <td>{{index+1}}</td>
+                        <td>{{book.bookName}}</td>
+                        <td>{{book.isbnNo}}</td>
+                        <td>{{book.authorName}}</td>
+                        <td>{{book.publishYear}}</td>
+                        <td class="td-style">{{book.description}}</td>
+                        <td>{{book.bookLink}}</td>
+                        <td>{{book.image}}</td>
+
+
+                        <td>
+                            <button @click="openEditModal(book)"
+                                    class="btn btn-primary nice-btn btn-sm  px-3"><i
+                                        class="far fa-edit"></i></button>
+                        </td>
+                        <td>
+                            <button @click="removeBook(book._id)"
+                                    class="btn btn-danger nice-btn  btn-sm px-4 "><i
+                                        class="far fa-trash-alt"></i></button>
+                        </td>
+
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 </div>
-<!--FOOTER-->
+
 
 
 <!-- Optional JavaScript -->
@@ -237,7 +251,7 @@
 
         el: '#root',
         data: {
-            headOne: "Welcome to CRUD System Controller",
+            headOne: "Welcome To My Dashboard ",
             p: "Do CRUD Operations Here!",
             books: [],
             newBook: {
@@ -245,6 +259,8 @@
                 isbnNo: "",
                 authorName: "",
                 publishYear: "",
+                description:"",
+                bookLink: "",
                 image: ""
 
             },
@@ -253,6 +269,8 @@
                 isbnNo: "",
                 authorName: "",
                 publishYear: "",
+                description:"",
+                bookLink: "",
                 image: ""
 
 

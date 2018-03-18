@@ -12,12 +12,21 @@ var Books = mongoose.model('Books', {
     isbnNo: String,
     authorName: String,
     publishYear: Number,
+    description:String,
+    bookLink: String,
     image: String
 
 });
 /* GET home page. */
 router.get('/', function (req, res) {
     res.render('homepage')
+});
+router.get('/home', function (req, res) {
+    res.render('homeafterlogin')
+});
+/* GET my collection page. */
+router.get('/collection', function (req, res) {
+    res.render('mycollection')
 });
 
 /* GET AddBooks page. */
